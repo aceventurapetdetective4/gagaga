@@ -1,4 +1,4 @@
-token: "XXXXXXXXXXXXXXXXXXXXXXXX"         # Lichess OAuth2 Token.
+token: "lip_6b489S3TNia2LGBMUotn"         # Lichess OAuth2 Token.
 
 engine:                                   # Engine settings.
   dir: "./engines"                        # Directory containing the engine.
@@ -26,13 +26,13 @@ engine:                                   # Engine settings.
       selection: "best"                   # Move selection is one of "best", "good" or "all".
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
     lichess_cloud:
-      enabled: false                      # Activate online moves from Lichess cloud eval.
-      min_eval_depth: 10                  # Minimum evaluation depth.
+      enabled: true                       # Activate online moves from Lichess cloud eval.
+      min_eval_depth: 20                  # Minimum evaluation depth.
       min_time: 40                        # Time the bot must have at least to use the online move.
       timeout: 5                          # Time the server has to respond.
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
     online_egtb:
-      enabled: false                      # Activate online endgame tablebases from Lichess.
+      enabled: true                       # Activate online endgame tablebases from Lichess.
       min_time: 10                        # Time the bot must have at least to use the online move.
       timeout: 3                          # Time the server has to respond.
   offer_draw:
@@ -47,6 +47,13 @@ engine:                                   # Engine settings.
   uci_options:                            # Arbitrary UCI options passed to the engine. (Commenting allowed)
     Move Overhead: 100                    # Increase if your bot flags games too often.
     Threads: 4                            # Max CPU threads the engine can use.
+    Ponder: true
+    Skill Level: 20
+    Slow Mover: 80
+    nodestime: 0
+    Use NNUE: true                             .
+    UCI_Elo: 2850
+    nodestime: 0
     Hash: 256                             # Max memory (in megabytes) the engine can allocate.
 #   SyzygyPath: "/path/to/syzygy"         # Path to your local syzygy endgame tablebases
 
@@ -54,7 +61,7 @@ move_overhead_multiplier: 1.0             # Increase if your bot flags games too
     
 challenge:                                # Incoming challenges. (Commenting allowed)
   concurrency: 1                          # Number of games to play simultaneously.
-  bullet_with_increment_only: false       # Whether bullet games should be accepted with increment only.
+  bullet_with_increment_only: true        # Whether bullet games should be accepted with increment only.
 # min_increment: 0                        # Minimum amount of increment to accept a challenge.
 # max_increment: 180                      # Maximum amount of increment to accept a challenge.
 # min_initial: 0                          # Minimum amount of initial time to accept a challenge.
